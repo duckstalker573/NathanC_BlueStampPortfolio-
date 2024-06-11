@@ -55,8 +55,6 @@ For your first milestone, describe what your project is and how you plan to buil
 
 # Starter Milestone 
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OumJj49xcUI?si=kpIN3PI6h_-X1IId" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 The starter project that I chose was the Retro Arcade. The different components that I used for this project included multiple buttons, buzzers and display screens that I had to solder onto the board. The chip and the board contained most of the code, so in order for the project to work, everything had to be solder and connected properly. On the technical aspect I learned how to solder and to fix my mistakes through  de-solder using the pump and wick. One of the challenges that I faced in this project was being very accurate and precise with soldering, the reason why is because soldering joints that aren't supposed to be together causes a short within the system and doesn't allow the project to work. Since the gaps between each joint was very small, it required precise soldering and fixing and cleaning up all the gaps was one of the biggest challenges for me. I look forward to improving my soldering in my future projects and to hopefully make less mistakes with it.   
