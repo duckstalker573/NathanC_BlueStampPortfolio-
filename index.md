@@ -30,17 +30,12 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 
 
-<!---# Second Milestone
+# Second Milestone
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone -->
+My project is the Biometric Attendance system. What I have accomplished since my first milestone was adding the RTC module and the fingerprint scanner. They contribute to my final goals because the RTC also known as Real Time Clock Module allows the system to know when the person registers their fingerprint and when they check back in. The fingerprint scanner is what captures the images of fingerprints and places it in the database which is important for the project. The most suprising part of this project so far has been the coding, attaching the components wasn't that complicated after understanding how a breadboard, arduino, and jumperwires work. The coding however, has been the most challenging part of this proejct because I'm new to the arduino coding language and debugging and syntax have been the most troublesome. However, I overcame this challenge through referencing to other pieces of code and understanding what commands and functions do and I ultimately debugged and corrected my original code to reach my second milestone. What needs to be finished before the final milestone, is adding the buzzer and led light to indicate certain actions so there are other alerts besides the text on the LCD. I also have small bugs in the project that need to be fixed up still before the third milestone. 
 
 # First Milestone
 
@@ -67,9 +62,7 @@ void loop() {
 }
 ```-->
 
-<!---# Bill of Materials
-Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
-Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. -->
+# Bill of Materials
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
