@@ -32,9 +32,9 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 # Second Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+<!---**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
 My project is the Biometric Attendance system. What I have accomplished since my first milestone was adding the RTC module and the fingerprint scanner. They contribute to my final goals because the RTC also known as Real Time Clock Module allows the system to know when the person registers their fingerprint and when they check back in. The fingerprint scanner is what captures the images of fingerprints and places it in the database which is important for the project. The most suprising part of this project so far has been the coding, attaching the components wasn't that complicated after understanding how a breadboard, arduino, and jumperwires work. The coding however, has been the most challenging part of this proejct because I'm new to the arduino coding language and debugging and syntax have been the most troublesome. However, I overcame this challenge through referencing to other pieces of code and understanding what commands and functions do and I ultimately debugged and corrected my original code to reach my second milestone. What needs to be finished before the final milestone, is adding the buzzer and led light to indicate certain actions so there are other alerts besides the text on the LCD. I also have small bugs in the project that need to be fixed up still before the third milestone. 
 
 # First Milestone
