@@ -1,5 +1,5 @@
 # Biometric Attendance System
-<!---Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!-->
+The project is a biometric attendance system that allows the user to create personalized fingerprint IDs and alerts the system when a registered fingerprint checks in. Some of the biggest challenges for this project were definitely the hardware and the technical aspect of it, since many of the compenents all required different requirements in order for them to work properly. Some of my triumphs were not only connecting the hardware onto breadboard but getting the code to work with the hardware. 
 
 <!---You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML -->
