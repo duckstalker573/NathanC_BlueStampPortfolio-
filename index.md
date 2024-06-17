@@ -40,10 +40,11 @@ My project is the Biometric Attendance system. What I have accomplished since my
 The project that I chose was the Biometric Attendance System . The different components that I used for this project were the Arduino Uno, a breadboard, a LCD, jumperwires, buttons, resistors, a buzzer, and a LED. My milestone was to learn how the ciruit works and how the Arduino connects to the breadboard. Since I wanted to first grasp the concept of the connections and make sure that all my parts work, my milestone was to have the buttons display messages on my LCD screen. Throug working on this milestone, I went through many challenges with the buttons and the LCD. The LCD was a challenge to connect because each part of the LCd had to go to a specific part or else the LCD would have energy past its threshold making it not work. Connecting the buttons were also a challenge because it needed to be connected to the 5V power source, the GRN source and a pin on the Arduino, so making the four buttons fit compactly on the board was a challenge. Since I aimed to do everything at once with this milestone, I learned to isolate the problem and to do things step by step and to make sure that all steps worked properly before moving on to the next one. My plan to complete this project is to continue that strategy that I learned and to take things step by step instead of plugging everything in at once and hoping that it works. For my next milestone I'll focus first on the fingerprint scanner and getting that to take in data correctly.  
 
 
-<!---# Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
+# Schematics 
+This is a diagram of my actual project. It isn't 100% accurate because there are some items in Tinkercad that aren't proportional to the real version of the item and there are also components missing on Tinkercad such as the Fingerprint scanner and RTC module; other than that, the model should be accurate.
+![Schematics](schematic.png)
 
-# Code
+<!---# Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
