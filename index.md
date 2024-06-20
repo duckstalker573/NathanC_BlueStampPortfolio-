@@ -43,6 +43,9 @@ The project that I chose was the Biometric Attendance System . The different com
 This is a diagram of my actual project. It isn't 100% accurate because there are some items in Tinkercad that aren't proportional to the real version of the item and there are also components missing on Tinkercad such as the Fingerprint scanner and RTC module; other than that, the model should be accurate.
 ![Schematics](schematic.png)
 
+CAD model for modification of a base to hold all the electrical components 
+![Schematics](base.png)
+
 <!---# Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
