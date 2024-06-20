@@ -14,7 +14,7 @@ The project is a biometric attendance system that allows the user to create pers
 
 <!---**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**-->
 
-![Headstone Image](Nathan_C.HEIC)
+![Headstone Image](headshot.png)
   
 # Final Milestone
 
