@@ -794,6 +794,6 @@ The starter project that I chose was the Retro Arcade. The different components 
 
 # Schematics for Starter Project 
 This is all the parts given from the Retro Arcade Kit. Most of the arcade is controlled by the microcontroller on the yellow plate.
-![Schematics](schematic.png)
+![Schematics](retro.png)
 
 
