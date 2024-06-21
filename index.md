@@ -49,7 +49,6 @@ CAD model for modification of a base to hold all the electrical components
 # Code
 This is the code for the Biometric Attendance System without Modifications 
 <details>
-
 <summary>Full Code Without Modifications</summary>
 
 ```c++
@@ -757,11 +756,6 @@ if(p == FINGERPRINT_OK){
 ```
 </details>
 
-
-
-
-
-
 # Bill of Materials
 
 | **Part** | **Note** | **Price** | **Link** |
@@ -779,7 +773,7 @@ if(p == FINGERPRINT_OK){
 
 
 # Other Resources/Examples
-- [Example 1](https://how2electronics.com/fingerprint-biometric-attendance-system-arduino/)
+- [Biometric Attendance System Guide](https://how2electronics.com/fingerprint-biometric-attendance-system-arduino/)
 
 
 # Starter Milestone 
@@ -792,5 +786,11 @@ The starter project that I chose was the Retro Arcade. The different components 
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Retro Arcade Solder Kit| descirption | $27 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6?crid=6LAEYX0GW2YS&keywords=arduino+uno&qid=1670424142&sprefix=arduino+uno,aps,93&sr=8-1-spons&psc=1&smid=AA57DDZKZUZDL&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExUEpBQjY0VFAwMEE5JmVuY3J5cHRlZElkPUEwMjQxNTk5MldZVExZVUVaV0dPMyZlbmNyeXB0ZWRBZElkPUEwOTQ2MzM3TldERlZJRlBETEtRJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ%3D%3D&linkCode=sl1&tag=howtoelect0e4-
+| Retro Arcade Solder Kit| A retro arcade kit that gives everything including code and a microcontroller and only requires proper soldering in order for the arcade to work | $19 | <a href="https://www.amazon.com/Classic-Electronic-Soldering-Tetris-Machine/dp/B07HB3HPPJ/ref=asc_df_B07HB3HPPJ/?tag=hyprod-20&linkCode=df0&hvadid=693127141877&hvpos=&hvnetw=g&hvrand=8842038919251504859&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-570319477420&mcid=1332a71f7f923b70acee31a99e30721a&gad_source=1&th=1"> Link </a> |
 <!---To watch the BSE tutorial on how to create a portfolio, click here.-->
+
+# Schematics for Starter Project 
+This is all the parts given from the Retro Arcade Kit. Most of the arcade is controlled by the microcontroller on the yellow plate.
+![Schematics](schematic.png)
+
+
