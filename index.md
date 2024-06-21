@@ -758,6 +758,223 @@ if(p == FINGERPRINT_OK){
 }
 ```
 </details>
+<details>
+
+<summary>Code for Main Functions without Modifications (Enroll, Delete, Attendance) </summary>
+
+```c++
+//Fingerprint Delete Function 
+uint8_t deleteFingerprint(uint8_t id)
+{
+    uint8_t p = -1;
+    lcd.clear();
+    lcd.print("Please wait");
+    p = finger.deleteModel(id);
+    if (p == FINGERPRINT_OK)
+    {
+        Serial.println("Deleted");
+        lcd.clear();
+        lcd.print("Finger Deleted");
+        lcd.setCursor(0, 1);
+        lcd.print("Successfully");
+        delay(1000);
+        lcd.clear();
+    }
+    else
+    {
+        Serial.print("Something Wrong");
+        lcd.clear();
+        lcd.print("Something Wrong");
+        lcd.setCursor(0, 1);
+        lcd.print("Try Again Later");
+        delay(2000);
+    }
+    return p; // Ensure to return a value of type uint8_t
+}
+
+//Fingerprint Enrollment Function
+uint8_t getFingerprintEnroll()
+{
+int p = -1;
+lcd.clear();
+lcd.print("finger ID");
+lcd.print(id);
+lcd.setCursor(0,1);
+lcd.print("Place Finger");
+delay(2000);
+while(p != FINGERPRINT_OK)
+{
+  p = finger.getImage();
+  switch (p)
+  {
+    case FINGERPRINT_OK:
+    Serial.println("Image Taken");
+    lcd.clear();
+    lcd.print("Image taken");
+    break;
+    case FINGERPRINT_NOFINGER:
+    Serial.println("No Finger");
+    lcd.clear();
+    lcd.print("No Finger Found");
+    break;
+    case FINGERPRINT_PACKETRECIEVEERR:
+    Serial.println("Communation error");
+    lcd.clear();
+    lcd.print("Comm Error");
+    break;
+    case FINGERPRINT_IMAGEFAIL:
+    Serial.println("Imaging error");
+    lcd.clear();
+    lcd.print("Imaging Error");
+    break;
+    default:
+    Serial.println("Unknown error");
+    lcd.clear();
+    lcd.print("Unknown Error");
+    break;
+  }
+}
+
+p = finger.image2Tz(1);
+switch(p){
+  case FINGERPRINT_OK:
+  Serial.println("Image converted");
+  lcd.clear();
+  lcd.print("Image converted");
+  break;
+  case FINGERPRINT_IMAGEMESS:
+  Serial.println("Image too messy");
+  lcd.clear();
+  lcd.print("Image too messy");
+  case FINGERPRINT_PACKETRECIEVEERR:
+  Serial.println("Communication error");
+  lcd.clear();
+  lcd.print("Comm Error");
+  return p;
+  case FINGERPRINT_FEATUREFAIL:
+  Serial.println("Could not find fingerprint features");
+  lcd.clear();
+  lcd.print("Feature Not Found ");
+  return p;
+  case FINGERPRINT_INVALIDIMAGE:
+  Serial.println("Couldn not find fingerprint features");
+  lcd.clear();
+  lcd.print("Feature Not Found");
+  return p;
+  default:
+  Serial.println("Unknown Error");
+  lcd.clear();
+  lcd.print("Unknown Error");
+  return p;
+} 
+
+Serial.println("Remove finger");
+lcd.clear();
+lcd.print("Remove Finger");
+delay(2000);
+p=0;
+while (p != FINGERPRINT_NOFINGER){
+  p = finger.getImage();
+}
+Serial.print("ID"); Serial.println(id);
+p = -1;
+Serial.print("Place the same finger again");
+lcd.clear();
+lcd.print("Place Finger");
+lcd.setCursor(0,1);
+lcd.print("Again");
+while (p != FINGERPRINT_OK){
+  p = finger.getImage();
+  switch(p) {
+    case FINGERPRINT_OK:
+    Serial.println("Image taken");
+    break;
+    case FINGERPRINT_NOFINGER:
+    Serial.print(".");
+    break;
+    case FINGERPRINT_PACKETRECIEVEERR:
+    Serial.println("Communication error");
+    break;
+    case FINGERPRINT_IMAGEFAIL:
+    Serial.println("Imaging error");
+    break;
+    default:
+    Serial.println("Unknown error");
+    return;
+  }
+}
+
+p = finger.image2Tz(2);
+switch (p){
+  case FINGERPRINT_OK:
+  Serial.println("Image converted");
+  break;
+  case FINGERPRINT_IMAGEMESS:
+  Serial.println("Image too messy");
+  return p;
+  case FINGERPRINT_PACKETRECIEVEERR:
+  Serial.println("Communication error");
+  return p;
+  case FINGERPRINT_INVALIDIMAGE:
+  Serial.println("Couldn't not find fingerprint features");
+  return p;
+  default:
+  Serial.println("Unknown error");
+  return p;
+}
+
+Serial.print("ID "); Serial.println(id);
+p =finger.storeModel(id);
+if(p == FINGERPRINT_OK){
+  Serial.println("Stored!");
+  lcd.clear();
+  lcd.print("Finger Stored!");
+  delay(2000);
+  lcd.clear();
+} else if (p == FINGERPRINT_PACKETRECIEVEERR){
+  Serial.println("Communication error");
+  return p;
+} else if (p == FINGERPRINT_BADLOCATION){
+  Serial.println("Could not store in that location");
+  return p;
+} else if (p == FINGERPRINT_FLASHERR){
+  Serial.println("Error writing to flash");
+  return p;
+} else {
+  Serial.println("Unknown error");
+  return p;
+}
+}
+
+//Fingerprint Attendance Function
+int getFingerprintIDez()
+{
+  uint8_t p = finger.getImage(); // Capture fingerprint image
+  if (p != FINGERPRINT_OK)
+    return -1; // Return -1 if getting image fails
+
+  p = finger.image2Tz(1); // Convert image to template in slot 1
+  if (p != FINGERPRINT_OK)
+    return -1; // Return -1 if conversion fails
+
+  p = finger.fingerFastSearch(); // Search for a match in templates
+  if (p != FINGERPRINT_OK)
+  {
+    lcd.clear();
+    lcd.print("Finger Not Found");
+    lcd.setCursor(0, 1);
+    lcd.print("Try Later");
+    delay(2000);
+    lcd.clear();
+    return -1; // Return -1 if fingerprint not found
+  }
+
+  Serial.print("Found ID #");
+  Serial.println(finger.fingerID); // Print found fingerprint ID
+  return finger.fingerID; // Return the found fingerprint ID
+}
+```
+</details>
 
 # Bill of Materials
 
@@ -777,11 +994,16 @@ if(p == FINGERPRINT_OK){
 
 # Other Resources/Examples
 - [Biometric Attendance System Guide](https://how2electronics.com/fingerprint-biometric-attendance-system-arduino/)
-
+- [Fingerprint Scanner User Manual](https://www.openhacks.com/uploadsproductos/r307_fingerprint_module_user_manual.pdf)
+- [Collapsable Section in Portfolio](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-collapsed-sections)
+  
+# Challenges with Modifications 
+During my modification of transforming my Biometric Attendance System into a fingerprint safe, I ran into some issues. My first challenge was to make everything mobile, since the biometric attendance system had everything on the breadboard it was much easier to connect items like buttons and the LCD. In order to make the safe possible and have the LCD displayed, I needed to get it off the board yet still have it work. My solution was to connect male to female wires from the LCD to the pins that they needed to be connected to. The buttons however were a bigger challenge because I needed them to be stable so that they could be pressed while still be mobile. My solution to this was grabbing a solderable board and soldering the four buttons onto the board. This was a challenge because the joint I made was often too weak due to the very small amount of pins that was showing from the buttons. The weak joints caused the wire to constantly disconnect making it a challenge to solder them on strongly and properly. One of the biggest challenge in the modification and the entire project in total was when my fingerprint scanner was holding incorrect data and wrongly assigning IDs. The ways I attempted to solve this problem were through checking code, rewiring my entire board, constantly running new versions of codes, and connecting the fingerprint scanner to a new Arduino. I believe the cause of the problem is a shorted or broken fingerprint scanner and I have over 12 hours trying to troubleshoot this issue.
 
 # Starter Milestone 
+<!---<iframe width="560" height="315" src="https://www.youtube.com/embed/OumJj49xcUI?si=kpIN3PI6h_-X1IId" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OumJj49xcUI?si=kpIN3PI6h_-X1IId" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![YouTube Video Thumbnail](http://img.youtube.com/vi/OumJj49xcUI/0.jpg)](http://www.youtube.com/watch?v=OumJj49xcUI)
 
 The starter project that I chose was the Retro Arcade. The different components that I used for this project included multiple buttons, buzzers and display screens that I had to solder onto the board. The chip and the board contained most of the code, so in order for the project to work, everything had to be solder and connected properly. On the technical aspect I learned how to solder and to fix my mistakes through  de-solder using the pump and wick. One of the challenges that I faced in this project was being very accurate and precise with soldering, the reason why is because soldering joints that aren't supposed to be together causes a short within the system and doesn't allow the project to work. Since the gaps between each joint was very small, it required precise soldering and fixing and cleaning up all the gaps was one of the biggest challenges for me. I look forward to improving my soldering in my future projects and to hopefully make less mistakes with it.
 
