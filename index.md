@@ -48,7 +48,9 @@ CAD model for modification of a base to hold all the electrical components
 
 # Code
 This is the code for the Biometric Attendance System without Modifications 
+<details>
 
+<summary>Full Code Without Modifications</summary>
 
 ```c++
 #include "Adafruit_Fingerprint.h" //fingerprint libary header file 
@@ -753,6 +755,9 @@ if(p == FINGERPRINT_OK){
 }
 }
 ```
+</details>
+
+
 
 
 
@@ -782,4 +787,10 @@ if(p == FINGERPRINT_OK){
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OumJj49xcUI?si=kpIN3PI6h_-X1IId" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 The starter project that I chose was the Retro Arcade. The different components that I used for this project included multiple buttons, buzzers and display screens that I had to solder onto the board. The chip and the board contained most of the code, so in order for the project to work, everything had to be solder and connected properly. On the technical aspect I learned how to solder and to fix my mistakes through  de-solder using the pump and wick. One of the challenges that I faced in this project was being very accurate and precise with soldering, the reason why is because soldering joints that aren't supposed to be together causes a short within the system and doesn't allow the project to work. Since the gaps between each joint was very small, it required precise soldering and fixing and cleaning up all the gaps was one of the biggest challenges for me. I look forward to improving my soldering in my future projects and to hopefully make less mistakes with it.
+
+# Bill of Materials for Starter Project 
+
+| **Part** | **Note** | **Price** | **Link** |
+|:--:|:--:|:--:|:--:|
+| Retro Arcade Solder Kit| descirption | $27 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6?crid=6LAEYX0GW2YS&keywords=arduino+uno&qid=1670424142&sprefix=arduino+uno,aps,93&sr=8-1-spons&psc=1&smid=AA57DDZKZUZDL&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExUEpBQjY0VFAwMEE5JmVuY3J5cHRlZElkPUEwMjQxNTk5MldZVExZVUVaV0dPMyZlbmNyeXB0ZWRBZElkPUEwOTQ2MzM3TldERlZJRlBETEtRJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ%3D%3D&linkCode=sl1&tag=howtoelect0e4-
 <!---To watch the BSE tutorial on how to create a portfolio, click here.-->
