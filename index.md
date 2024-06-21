@@ -19,13 +19,11 @@ The project is a biometric attendance system which allows the user to create per
 # Final Milestone
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/55g2z3BQ6Bw?si=MaItMTyr6E6Ge4id" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<!---<iframe width="560" height="315" src="https://www.youtube.com/embed/55g2z3BQ6Bw?si=MaItMTyr6E6Ge4id" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+[![YouTube Video Thumbnail](http://img.youtube.com/vi/55g2z3BQ6Bw/0.jpg)](http://www.youtube.com/watch?v=55g2z3BQ6Bw)
 
-<!---For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at B-->
+
+
 My project is the Biometric Attendance system. What I have accomplished since my second milestone is adding an LED and a buzzer to indicate when someone checks in with the system after registering their fingerprint. One of my biggest challenges with this milestone was the technical aspect of attaching the LED and buzzer. Since I had used up most of my digital pins, I initially placed the LED into pin 1 and during my main code and my LED was constantly on, however when I ran a simple piece of code, the LED worked. I discovered that this issue was due to pin 1 being a pin that sends serial messages and since my main code included sending messages to the serial monitor, it constantly sent signals to the LED to be on which is why the simple code worked but not my main code. I solved this challenge by changing the LED pin to A1 so that it wouldn't constantly send signals to my LED. I also struggled with implementing the buzzer because I didn't route the power sources correctly so I wasn't sure if it made noise or not. I solved this problem by isolating the buzzer and running it with simple code first to make sure that it was connected properly. One of my biggest triumphs with this project was getting the LCD to light up since it was my first piece that I integrated into the breadboard and it was a big achievement for me to have something work. Some of the key topics I learned during this project were how the Ardunio, breadboard and other components work and learning the Arduino IDE and how to troubleshoot certain problems. I hope to learn in the future how to CAD and 3D model for my modifications because I plan to make a safe for my fingerprint scanner which uses a servo as a lock.
 
 
