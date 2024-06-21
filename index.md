@@ -471,50 +471,6 @@ void checkKeys()
   }
 }
 
-//void Enroll()
-//{
-  //int count=1;
- // lcd.clear();
-  //lcd.print("Enter Finger ID:");
-
-  //while(1)
-  //{
-    //lcd.setCursor(0,1);
-    //lcd.print(count);
-    //if(digitalRead(forward)==0)
-    //{
-      //count++;
-      //if(count>records)
-      //count=1;
-      //delay(500);
-    //} 
-    //else if (digitalRead(reverse) == 0)
-    //{
-      //count--;
-      //if(count<1)
-      //count=records;
-      //delay(500);
-    //}
-    //else if(digitalRead(delete_ok) == 0)
-    //{
-      //id=count;
-      //getFingerprintEnroll();
-      //for(int i=0;i<records;i++)
-      //{
-        //if(EEPROM.read(i) !=0xff)
-        //{
-          //EEPROM.write(i,id);
-          //break;
-        //}
-      //}
-      //return;
-    //}
-    //else if (digitalRead(register_back) == 0)
-    //{
-      //return;
-    //}
-  //}
-//}
 void Enroll()
 {
   int count=1;
@@ -975,6 +931,104 @@ int getFingerprintIDez()
 }
 ```
 </details>
+<details>
+
+<summary>Code for Menu Display (Enroll & Delete)</summary>
+
+```c++
+//Menu for Enrolling a Fingerprint 
+void Enroll()
+{
+  int count=1;
+  lcd.clear();
+  lcd.print("Enter Finger ID:");
+
+  while(1)
+  {
+    lcd.setCursor(0,1);
+    lcd.print(count);
+    if(digitalRead(forward)==0)
+    {
+      count++;
+      if(count>records)
+      count=1;
+      delay(500);
+    } 
+    else if (digitalRead(reverse) == 0)
+    {
+      count--;
+      if(count<1)
+      count=records;
+      delay(500);
+    }
+    else if(digitalRead(delete_ok) == 0)
+    {
+      id=count;
+      getFingerprintEnroll();
+      for(int i=0;i<records;i++)
+      {
+        if(EEPROM.read(i) !=0xff)
+        {
+          EEPROM.write(i,id);
+          break;
+        }
+      }
+      return;
+    }
+    else if (digitalRead(register_back) == 0)
+    {
+      return;
+    }
+  }
+}
+
+//Menu for Deleting a Fingerprint 
+void delet()
+{
+  int count=1;
+  lcd.clear();
+  lcd.print("Delete Finger ID");
+
+  while(1)
+  {
+    lcd.setCursor(0,1);
+    lcd.print(count);
+    if(digitalRead(forward) == 0)
+    {
+      count++;
+      if(count>records)
+      count=1;
+      delay(500);
+    }
+    else if(digitalRead(reverse) == 0)
+    {
+      count--;
+      if(count<1)
+      count=records;
+      delay(500);
+    }
+    else if(digitalRead(delete_ok) == 0)
+    {
+      id=count;
+      deleteFingerprint(id);
+      for(int i=0;i<records;i++)
+      {
+        if(EEPROM.read(i)==id)
+        {
+          EEPROM.write(i, 0xff);
+          break;
+        }
+      }
+      return;
+    }
+    else if (digitalRead(register_back)==0)
+    {
+      return;
+    }
+}
+}
+```
+</details>
 
 # Bill of Materials
 
@@ -992,10 +1046,13 @@ int getFingerprintIDez()
 | Breadboard | The Breadboard is used to allow current to flow so that all the parts on the breadboard can be powered and work properly  | $8 | <a href="https://www.amazon.com/Breadboards-Solderless-Breadboard-Distribution-Connecting/dp/B07DL13RZH?crid=6T9E1ZJ0A1ZJ&keywords=breadboard&qid=1670423851&sprefix=breadboard,aps,109&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyMVFBN003NDcwMzhDJmVuY3J5cHRlZElkPUEwNjI2OTk4MjRPNVBNVE5TNEdNRiZlbmNyeXB0ZWRBZElkPUEwNzgyNTA2Mzk3RkFTTTg1Qk9INSZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU%3D&linkCode=sl1&tag=howtoelect0e4-20&linkId=019fbb8879193ec4d27cdb1a71084734&language=en_US&ref_=as_li_ss_tl"> Link </a> |
 
 
-# Other Resources/Examples
+# Important Resources 
 - [Biometric Attendance System Guide](https://how2electronics.com/fingerprint-biometric-attendance-system-arduino/)
 - [Fingerprint Scanner User Manual](https://www.openhacks.com/uploadsproductos/r307_fingerprint_module_user_manual.pdf)
 - [Collapsable Section in Portfolio](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-collapsed-sections)
+- [Servo Lock Inspiration](https://www.youtube.com/watch?v=SS0IJ4thUi4)
+- [LCD Connection Guide](https://docs.arduino.cc/learn/electronics/lcd-displays/)
+- [CAD Website](https://www.onshape.com/en/)
   
 # Challenges with Modifications 
 During my modification of transforming my Biometric Attendance System into a fingerprint safe, I ran into some issues. My first challenge was to make everything mobile, since the biometric attendance system had everything on the breadboard it was much easier to connect items like buttons and the LCD. In order to make the safe possible and have the LCD displayed, I needed to get it off the board yet still have it work. My solution was to connect male to female wires from the LCD to the pins that they needed to be connected to. The buttons however were a bigger challenge because I needed them to be stable so that they could be pressed while still be mobile. My solution to this was grabbing a solderable board and soldering the four buttons onto the board. This was a challenge because the joint I made was often too weak due to the very small amount of pins that was showing from the buttons. The weak joints caused the wire to constantly disconnect making it a challenge to solder them on strongly and properly. One of the biggest challenge in the modification and the entire project in total was when my fingerprint scanner was holding incorrect data and wrongly assigning IDs. The ways I attempted to solve this problem were through checking code, rewiring my entire board, constantly running new versions of codes, and connecting the fingerprint scanner to a new Arduino. I believe the cause of the problem is a shorted or broken fingerprint scanner and I have over 12 hours trying to troubleshoot this issue.
