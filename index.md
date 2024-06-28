@@ -12,7 +12,7 @@ The project is a biometric attendance system that allows the user to create pers
 | Nathan C | Archbishop Mitty High School | Biomedical Engineering | Incoming Junior
 
 <!---**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**-->
-<img src="headshot.png" alt="Headshot Image" width="300"/>
+<img src="Nathan_C.JPG" alt="Headshot Image" width="300"/>
 
 
 # Modifications 
